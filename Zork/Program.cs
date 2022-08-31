@@ -23,23 +23,14 @@ namespace Zork
                         break;
 
                     case Commands.NORTH:
-                        outputString = "You moved NORTH.";
-                        break;
-
                     case Commands.SOUTH:
-                        outputString = "You moved SOUTH.";
-                        break;
-
                     case Commands.EAST:
-                        outputString = "You moved EAST.";
-                        break;
-
                     case Commands.WEST:
-                        outputString = "You moved WEST.";
+                        outputString = $"You moved {command}.";
                         break;
 
                     case Commands.QUIT:
-                        outputString = "Thanks for playing.";
+                        outputString = "Thank you for playing!";
                         break;
 
                     default:
