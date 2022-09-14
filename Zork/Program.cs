@@ -12,39 +12,68 @@ namespace Zork
             Commands command = Commands.UNKNOWN;
             while (command != Commands.QUIT)
             {
+                Console.WriteLine(Rooms[CurrentRoom]);
                 Console.Write("> ");
                 command = ToCommand(Console.ReadLine().Trim());
 
-                string outputString;
                 switch (command)
                 {
                     case Commands.LOOK:
-                        outputString = "This is an open field west of a white house, with a boarded front door.\nA rubber mat saying 'Welcome to Zork!' lies by the door";
+                        Console.WriteLine("This is an open field west of a white house, with a boarded front door.\nA rubber mat saying 'Welcome to Zork!' lies by the door");
                         break;
 
                     case Commands.NORTH:
                     case Commands.SOUTH:
                     case Commands.EAST:
                     case Commands.WEST:
-                        outputString = $"You moved {command}.";
+                        if(Move(command) == false)
+                        {
+                            Console.WriteLine("The way is shut!");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"You moved {command}.");
+                        }
                         break;
-
+                        
                     case Commands.QUIT:
-                        outputString = "Thank you for playing!";
+                        Console.WriteLine("Thank you for playing!");
                         break;
 
                     default:
-                        outputString = "Unknown Command";
+                        Console.WriteLine("Unknown Command");
                         break;
                 }
 
-                Console.WriteLine(outputString);
             }
             
 
         }
 
+        private static bool Move(Commands command)
+        {
+            bool isValidMove = true;
+            switch (command)
+            {
+                case Commands.WEST when CurrentRoom > 0:
+                    CurrentRoom--;
+                    break;
+
+                case Commands.EAST when CurrentRoom < Rooms.Length - 1:
+                    CurrentRoom++;
+                    break;
+
+                default :
+                    isValidMove = false;
+                    break;
+            }
+            return isValidMove;
+        }
+
         private static Commands ToCommand(string commandString) => Enum.TryParse(commandString, true, out Commands result) ? result : Commands.UNKNOWN;
-        
+
+        private static readonly string[] Rooms = { "Forest", "West of House", "Behind House", "Clearing", "Canyon View" };
+        private static int CurrentRoom = 1;
+
     }
 }
