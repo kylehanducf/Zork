@@ -19,7 +19,17 @@ namespace Zork
         [JsonIgnore]
         public IReadOnlyDictionary<Directions, Room> Neighbors { get; private set; }
 
-        public static bool operator ==(Room lhs, Room rhs)
+        public List<Item> Inventory { get; }
+
+        public Room(string name, string description, Dictionary<Directions, string> neighborNames, List<Item> inventory)
+        {
+            Name = name;
+            Description = description;
+            NeighborNames = neighborNames ?? new Dictionary<Directions, string>();
+            Inventory = inventory ?? new List<Item>();
+        }
+
+        public static bool operator == (Room lhs, Room rhs)
         {
             if (ReferenceEquals(lhs, rhs))
             {

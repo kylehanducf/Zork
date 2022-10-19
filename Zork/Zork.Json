@@ -9,7 +9,17 @@
           "North": "North of House",
           "South": "South of House",
           "West": "Forest 1"
-        }
+        },
+        "Inventory": [
+          {
+            "Name": "Welcome Mat",
+            "Description": "A rubber mat with the words 'Welcome to Zork!' written on it."
+          },
+          {
+            "Name": "Mailbox",
+            "Description": "A small mailbox."
+          }
+        ]
       },
       {
         "Name": "North of House",
