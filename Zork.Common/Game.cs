@@ -34,7 +34,6 @@ namespace Zork.Common
                 Output.Write("> ");
 
                 string inputString = Console.ReadLine().Trim();
-                // might look like:  "LOOK", "TAKE MAT", "QUIT"
                 char  separator = ' ';
                 string[] commandTokens = inputString.Split(separator);
                 
@@ -66,6 +65,10 @@ namespace Zork.Common
 
                     case Commands.Look:
                         outputString = Player.CurrentRoom.Description;
+                        foreach (Item item in Player.CurrentRoom.Inventory)
+                        {
+                            Output.WriteLine(item.Name);
+                        }
                         break;
 
                     case Commands.North:
@@ -84,17 +87,28 @@ namespace Zork.Common
                         break;
 
                     case Commands.Take:
-                        //TODO
+                        if (subject != null)
+                        {
+                            Player.Take(subject);
+                        }
+                        //Could return a bool here so the outputstring can be "taken" or "dropped" or "no item to take" or "no item to drop"
+                        //How would I get the reference to the item though
                         outputString = null;
                         break;
 
                     case Commands.Drop:
-                        //TODO
+                        if (subject != null)
+                        {
+                            Player.Drop(subject);
+                        }
                         outputString = null;
                         break;
 
                     case Commands.Inventory:
-                        //TODO
+                        foreach (Item item in Player.Inventory)
+                        {
+                            Output.WriteLine(item.Name);
+                        }
                         outputString = null;
                         break;
 

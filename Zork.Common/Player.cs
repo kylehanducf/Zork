@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Bson;
+using System;
 using System.Collections.Generic;
 
 namespace Zork.Common
@@ -12,6 +13,7 @@ namespace Zork.Common
         }
 
         public List<Item> Inventory { get; }
+
 
         public Player(World world, string startingLocation)
         {
@@ -34,6 +36,60 @@ namespace Zork.Common
             }
 
             return didMove;
+        }
+
+        public void Take(string itemName)
+        {
+            Item itemToTake = null;
+            foreach (Item item in CurrentRoom.Inventory)
+            {
+                if (string.Compare(itemName, item.Name, StringComparison.OrdinalIgnoreCase) == 0)
+                {
+                    itemToTake = item;
+                    AddToInventory(itemToTake);
+                    CurrentRoom.RemoveFromInventory(itemToTake);
+                    Console.WriteLine("Taken");
+                    break;
+                }
+            }
+
+            if (itemToTake == null)
+            {
+                Console.WriteLine("No such item exists.");
+            }
+
+        }
+
+        public void Drop(string itemName)
+        {
+            Item itemToDrop = null;
+            foreach (Item item in Inventory)
+            {
+                if (string.Compare(itemName, item.Name, StringComparison.OrdinalIgnoreCase) == 0)
+                {
+                    itemToDrop = item;
+                    RemoveFromInventory(itemToDrop);
+                    CurrentRoom.AddToInventory(itemToDrop);
+                    Console.WriteLine("Dropped");
+                    break;
+                }
+            }
+
+            if (itemToDrop == null)
+            {
+                Console.WriteLine("You don't have that.");
+            }
+
+        }
+
+        public void AddToInventory(Item itemToAdd)
+        {
+            Inventory.Add(itemToAdd);
+        }
+
+        public void RemoveFromInventory(Item itemToRemove)
+        {
+            Inventory.Remove(itemToRemove);
         }
 
         private World _world;

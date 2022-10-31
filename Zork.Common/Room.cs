@@ -81,6 +81,16 @@ namespace Zork.Common
             InventoryNames = null;
         }
 
+        public void AddToInventory(Item itemToAdd)
+        {
+            Inventory.Add(itemToAdd);
+        }
+
+        public void RemoveFromInventory(Item itemToRemove)
+        {
+            Inventory.Remove(itemToRemove);
+        }
+
         public override string ToString() => Name;
     }
 }
