@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31613.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zork", "Zork\Zork.csproj", "{489AF7D3-AB5C-4ABA-907C-6421130AEE4B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zork.Common", "Zork.Common\Zork.Common.csproj", "{072DFD90-A115-482C-9E9A-A51B94DC960C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zork.Cli", "Zork.Cli\Zork.Cli.csproj", "{EB6F6B87-4AC0-44C7-8187-A0B7C154DD84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{489AF7D3-AB5C-4ABA-907C-6421130AEE4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{489AF7D3-AB5C-4ABA-907C-6421130AEE4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{489AF7D3-AB5C-4ABA-907C-6421130AEE4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{489AF7D3-AB5C-4ABA-907C-6421130AEE4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{072DFD90-A115-482C-9E9A-A51B94DC960C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{072DFD90-A115-482C-9E9A-A51B94DC960C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{072DFD90-A115-482C-9E9A-A51B94DC960C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{072DFD90-A115-482C-9E9A-A51B94DC960C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB6F6B87-4AC0-44C7-8187-A0B7C154DD84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB6F6B87-4AC0-44C7-8187-A0B7C154DD84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB6F6B87-4AC0-44C7-8187-A0B7C154DD84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB6F6B87-4AC0-44C7-8187-A0B7C154DD84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E8955DD4-0C70-462C-97E5-C3DA28F4665E}
+		SolutionGuid = {00C0D284-1FDC-4E95-B8BC-1B17E1154524}
 	EndGlobalSection
 EndGlobal

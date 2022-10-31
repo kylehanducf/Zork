@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace Zork
+﻿namespace Zork.Common
 {
     public class Item
     {

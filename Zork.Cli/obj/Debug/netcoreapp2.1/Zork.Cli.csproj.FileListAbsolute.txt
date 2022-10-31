@@ -1,0 +1,5 @@
+C:\Users\pvarcholik\source\repos\Zork_Fall2022\Zork.Cli\obj\Debug\netcoreapp2.1\Zork.Cli.csproj.AssemblyReference.cache
+C:\Users\pvarcholik\source\repos\Zork_Fall2022\Zork.Cli\obj\Debug\netcoreapp2.1\Zork.Cli.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pvarcholik\source\repos\Zork_Fall2022\Zork.Cli\obj\Debug\netcoreapp2.1\Zork.Cli.AssemblyInfoInputs.cache
+C:\Users\pvarcholik\source\repos\Zork_Fall2022\Zork.Cli\obj\Debug\netcoreapp2.1\Zork.Cli.AssemblyInfo.cs
+C:\Users\pvarcholik\source\repos\Zork_Fall2022\Zork.Cli\obj\Debug\netcoreapp2.1\Zork.Cli.csproj.CoreCompileInputs.cache
