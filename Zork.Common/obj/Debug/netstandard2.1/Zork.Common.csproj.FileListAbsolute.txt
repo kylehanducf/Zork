@@ -1,0 +1,10 @@
+E:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\bin\Debug\netstandard2.1\Zork.Common.deps.json
+E:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\bin\Debug\netstandard2.1\Zork.Common.dll
+E:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\bin\Debug\netstandard2.1\Zork.Common.pdb
+E:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\obj\Debug\netstandard2.1\Zork.Common.csproj.AssemblyReference.cache
+E:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\obj\Debug\netstandard2.1\Zork.Common.GeneratedMSBuildEditorConfig.editorconfig
+E:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\obj\Debug\netstandard2.1\Zork.Common.AssemblyInfoInputs.cache
+E:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\obj\Debug\netstandard2.1\Zork.Common.AssemblyInfo.cs
+E:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\obj\Debug\netstandard2.1\Zork.Common.csproj.CoreCompileInputs.cache
+E:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\obj\Debug\netstandard2.1\Zork.Common.dll
+E:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\obj\Debug\netstandard2.1\Zork.Common.pdb
