@@ -18,3 +18,13 @@ H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\obj\Debug\netstandar
 H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\obj\Debug\netstandard2.1\Zork.Common.csproj.CoreCompileInputs.cache
 H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\obj\Debug\netstandard2.1\Zork.Common.dll
 H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\obj\Debug\netstandard2.1\Zork.Common.pdb
+D:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\bin\Debug\netstandard2.1\Zork.Common.deps.json
+D:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\bin\Debug\netstandard2.1\Zork.Common.dll
+D:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\bin\Debug\netstandard2.1\Zork.Common.pdb
+D:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\obj\Debug\netstandard2.1\Zork.Common.csproj.AssemblyReference.cache
+D:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\obj\Debug\netstandard2.1\Zork.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\obj\Debug\netstandard2.1\Zork.Common.AssemblyInfoInputs.cache
+D:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\obj\Debug\netstandard2.1\Zork.Common.AssemblyInfo.cs
+D:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\obj\Debug\netstandard2.1\Zork.Common.csproj.CoreCompileInputs.cache
+D:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\obj\Debug\netstandard2.1\Zork.Common.dll
+D:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Common\obj\Debug\netstandard2.1\Zork.Common.pdb

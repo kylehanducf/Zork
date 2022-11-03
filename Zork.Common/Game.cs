@@ -28,6 +28,10 @@ namespace Zork.Common
                 if (previousRoom != Player.CurrentRoom)
                 {
                     Output.WriteLine(Player.CurrentRoom.Description);
+                    foreach (Item item in Player.CurrentRoom.Inventory)
+                    {
+                        Output.WriteLine(item.Description);
+                    }
                     previousRoom = Player.CurrentRoom;
                 }
 
@@ -55,7 +59,7 @@ namespace Zork.Common
                 }
 
                 Commands command = ToCommand(verb);
-                string outputString;
+                string outputString = null;
                 switch (command)
                 {
                     case Commands.Quit:
@@ -64,11 +68,12 @@ namespace Zork.Common
                         break;
 
                     case Commands.Look:
-                        outputString = Player.CurrentRoom.Description;
+                        Output.WriteLine(Player.CurrentRoom.Description);
                         foreach (Item item in Player.CurrentRoom.Inventory)
                         {
-                            Output.WriteLine(item.Name);
+                            Output.WriteLine(item.Description);
                         }
+                        outputString = null;
                         break;
 
                     case Commands.North:
@@ -78,46 +83,59 @@ namespace Zork.Common
                         Directions direction = (Directions)command;
                         if (Player.Move(direction))
                         {
-                            outputString = $"You moved {direction}.";
+                            outputString = $"You moved {direction}.\n";
                         }
                         else
                         {
-                            outputString = "The way is shut!";
+                            outputString = "The way is shut!\n";
                         }
                         break;
 
                     case Commands.Take:
                         if (subject != null)
                         {
-                            Player.Take(subject);
+                            Player.Take(subject, this);
                         }
-                        //Could return a bool here so the outputstring can be "taken" or "dropped" or "no item to take" or "no item to drop"
-                        //How would I get the reference to the item though
-                        outputString = null;
+                        else
+                        {
+                            outputString = "This command requires a subject.\n";
+                        };
                         break;
 
                     case Commands.Drop:
                         if (subject != null)
                         {
-                            Player.Drop(subject);
+                            Player.Drop(subject, this);
                         }
-                        outputString = null;
+                        else
+                        {
+                            outputString = "This command requires a subject.\n";
+                        }
                         break;
 
                     case Commands.Inventory:
-                        foreach (Item item in Player.Inventory)
+                        if (Player.Inventory.Count > 0)
                         {
-                            Output.WriteLine(item.Name);
+                            Output.WriteLine("\nYou are carrying: ");
+                            foreach (Item item in Player.Inventory)
+                            {
+                                Output.WriteLine(item.Description);
+                            }
+                            Output.WriteLine("");
                         }
-                        outputString = null;
+                        else
+                        {
+                            outputString = "You are empty handed.\n";
+                        }
                         break;
 
                     default:
                         outputString = "Unknown command.";
                         break;
                 }
-
+                
                 Output.WriteLine(outputString);
+
             }
         }
 

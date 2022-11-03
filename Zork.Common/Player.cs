@@ -38,7 +38,7 @@ namespace Zork.Common
             return didMove;
         }
 
-        public void Take(string itemName)
+        public void Take(string itemName, Game game)
         {
             Item itemToTake = null;
             foreach (Item item in CurrentRoom.Inventory)
@@ -48,19 +48,19 @@ namespace Zork.Common
                     itemToTake = item;
                     AddToInventory(itemToTake);
                     CurrentRoom.RemoveFromInventory(itemToTake);
-                    Console.WriteLine("Taken");
+                    game.Output.WriteLine("Taken.");
                     break;
                 }
             }
 
             if (itemToTake == null)
             {
-                Console.WriteLine("No such item exists.");
+                game.Output.WriteLine("No such item exists.");
             }
 
         }
 
-        public void Drop(string itemName)
+        public void Drop(string itemName, Game game)
         {
             Item itemToDrop = null;
             foreach (Item item in Inventory)
@@ -70,14 +70,14 @@ namespace Zork.Common
                     itemToDrop = item;
                     RemoveFromInventory(itemToDrop);
                     CurrentRoom.AddToInventory(itemToDrop);
-                    Console.WriteLine("Dropped");
+                    game.Output.WriteLine("Dropped");
                     break;
                 }
             }
 
             if (itemToDrop == null)
             {
-                Console.WriteLine("You don't have that.");
+                game.Output.WriteLine("You don't have that.");
             }
 
         }

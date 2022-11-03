@@ -15,9 +15,9 @@ namespace Zork.Cli
 
             var output = new ConsoleOutputService();
 
-            Console.WriteLine("Welcome to Zork!");
+            output.WriteLine("Welcome to Zork!");
             game.Run(output);
-            Console.WriteLine("Finished.");
+            output.WriteLine("Finished.");
         }
 
         private enum CommandLineArguments
