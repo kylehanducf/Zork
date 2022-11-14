@@ -1,3 +1,11 @@
 .vs
 Zork/bin
 Zork/obj
+Zork.Common/bin
+Zork.Common/obj
+Zork.Unity/Library
+Zork.Unity/Logs
+Zork.Unity/Temp
+Zork.Unity/.vsconfig
+Zork.Unity/*.sln
+Zork.Unity/*.csproj
