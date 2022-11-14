@@ -4,15 +4,18 @@
     "Items": [
       {
         "Name": "Mat",
-        "Description": "A rubber mat with the words 'Welcome to Zork!' written on it lies here."
+        "LookDescription": "A rubber mat saying 'Welcome to Zork!' lies here.",
+        "InventoryDescription": "A welcome mat."
       },
       {
         "Name": "Mailbox",
-        "Description": "There is a small mailbox here."
+        "LookDescription": "There is a small mailbox here.",
+        "InventoryDescription": "A small mailbox."
       },
       {
         "Name": "Leaves",
-        "Description": "There is a pile of leaves here."
+        "LookDescription": "There is a pile of leaves here.",
+        "InventoryDescription": "A pile of leaves."
       }
     ],
     "Rooms": [
@@ -87,7 +90,7 @@
           "West": "Forest 2",
           "South": "Forest 3"
         },
-        "InventoryNames": [
+        "IventoryNames": [
           "Leaves"
         ]
       }

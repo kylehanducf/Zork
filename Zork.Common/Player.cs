@@ -1,38 +1,17 @@
-﻿using Newtonsoft.Json.Bson;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace Zork.Common
 {
     public class Player
     {
-
-        public event EventHandler<int> MovesChanged;
-
         public Room CurrentRoom
         {
             get => _currentRoom;
             set => _currentRoom = value;
         }
 
-        public int Moves
-        {
-            get
-            {
-                return _moves;
-            }
-
-            set
-            {
-                if (_moves != value)
-                {
-                    _moves = value;
-                    MovesChanged?.Invoke(this, _moves);
-                }
-            }
-        }
-
-        public List<Item> Inventory { get; }
+        public IEnumerable<Item> Inventory => _inventory;
 
         public Player(World world, string startingLocation)
         {
@@ -43,7 +22,7 @@ namespace Zork.Common
                 throw new Exception($"Invalid starting location: {startingLocation}");
             }
 
-            Inventory = new List<Item>();
+            _inventory = new List<Item>();
         }
 
         public bool Move(Directions direction)
@@ -57,62 +36,26 @@ namespace Zork.Common
             return didMove;
         }
 
-        public void Take(string itemName, Game game)
+        public void AddItemToInventory(Item itemToAdd)
         {
-            Item itemToTake = null;
-            foreach (Item item in CurrentRoom.Inventory)
+            if (_inventory.Contains(itemToAdd))
             {
-                if (string.Compare(itemName, item.Name, StringComparison.OrdinalIgnoreCase) == 0)
-                {
-                    itemToTake = item;
-                    AddToInventory(itemToTake);
-                    CurrentRoom.RemoveFromInventory(itemToTake);
-                    game.Output.WriteLine("Taken.");
-                    break;
-                }
+                throw new Exception($"Item {itemToAdd} already exists in inventory.");
             }
 
-            if (itemToTake == null)
-            {
-                game.Output.WriteLine("No such item exists.");
-            }
-
+            _inventory.Add(itemToAdd);
         }
 
-        public void Drop(string itemName, Game game)
+        public void RemoveItemFromInventory(Item itemToRemove)
         {
-            Item itemToDrop = null;
-            foreach (Item item in Inventory)
+            if (_inventory.Remove(itemToRemove) == false)
             {
-                if (string.Compare(itemName, item.Name, StringComparison.OrdinalIgnoreCase) == 0)
-                {
-                    itemToDrop = item;
-                    RemoveFromInventory(itemToDrop);
-                    CurrentRoom.AddToInventory(itemToDrop);
-                    game.Output.WriteLine("Dropped");
-                    break;
-                }
+                throw new Exception("Could not remove item from inventory.");
             }
-
-            if (itemToDrop == null)
-            {
-                game.Output.WriteLine("You don't have that.");
-            }
-
         }
 
-        public void AddToInventory(Item itemToAdd)
-        {
-            Inventory.Add(itemToAdd);
-        }
-
-        public void RemoveFromInventory(Item itemToRemove)
-        {
-            Inventory.Remove(itemToRemove);
-        }
-
-        private World _world;
+        private readonly World _world;
         private Room _currentRoom;
-        private int _moves;
+        private readonly List<Item> _inventory;
     }
 }

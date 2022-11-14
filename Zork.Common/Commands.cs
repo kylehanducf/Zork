@@ -4,6 +4,8 @@
     {
         Quit,
         Q = Quit,
+        Exit = Quit,
+        Bye = Quit,
         Look,
         L = Look,
         North,
@@ -15,9 +17,7 @@
         West,
         W = West,
         Take,
-        T = Take,
         Drop,
-        D = Drop,
         Inventory,
         I = Inventory,
         Unknown
