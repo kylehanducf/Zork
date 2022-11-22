@@ -7,6 +7,10 @@ namespace Zork.Common
     {
         public event EventHandler<Room> LocationChanged;
 
+        public event EventHandler<int> ScoreChanged;
+
+        public event EventHandler<int> MovesChanged;
+
         public Room CurrentRoom
         {
             get => _currentRoom;
@@ -21,6 +25,10 @@ namespace Zork.Common
         }
 
         public IEnumerable<Item> Inventory => _inventory;
+
+        public int Score { get; set; }
+
+        public int Moves { get; set; }
 
         public Player(World world, string startingLocation)
         {
@@ -61,6 +69,18 @@ namespace Zork.Common
             {
                 throw new Exception("Could not remove item from inventory.");
             }
+        }
+
+        public void AddMove()
+        {
+            Moves++;
+            MovesChanged?.Invoke(this, Moves);
+        }
+
+        public void AddScore()
+        {
+            Score++;
+            ScoreChanged?.Invoke(this, Score);
         }
 
         private readonly World _world;

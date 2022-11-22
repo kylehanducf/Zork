@@ -2,18 +2,22 @@ using Newtonsoft.Json;
 using UnityEngine;
 using Zork.Common;
 using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI LocationText;
+
     [SerializeField]
     private TextMeshProUGUI ScoreText;
+
     [SerializeField]
     private TextMeshProUGUI MovesText;
 
     [SerializeField]
     private UnityInputService InputService;
+
     [SerializeField]
     private UnityOutputService OutputService;
 
@@ -22,6 +26,8 @@ public class GameManager : MonoBehaviour
         TextAsset gameJson = Resources.Load<TextAsset>("GameJson");
         _game = JsonConvert.DeserializeObject<Game>(gameJson.text);
         _game.Player.LocationChanged += Player_LocationChanged;
+        _game.Player.ScoreChanged += Player_ScoreChanged;
+        _game.Player.MovesChanged += Player_MovesChanged;
         _game.Run(InputService, OutputService);
 
     }
@@ -31,10 +37,20 @@ public class GameManager : MonoBehaviour
         LocationText.text = location.Name;
     }
 
+    public void Player_ScoreChanged(object sender, int score)
+    {
+        ScoreText.text = $"Score: {score}";
+    }
+
+    public void Player_MovesChanged(object sender, int moves)
+    {
+        MovesText.text = $"Moves: {moves}";
+    }
+
     public void Start()
     {
         InputService.SetFocus();
-        //LocationText.text = _game.Player.LocationChanged
+        LocationText.text = _game.Player.CurrentRoom.Name;
     }
 
     private void Update()

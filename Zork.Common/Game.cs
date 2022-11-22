@@ -61,6 +61,12 @@ namespace Zork.Common
 
             Room previousRoom = Player.CurrentRoom;
             Commands command = ToCommand(verb);
+
+            if (command != Commands.Score && command != Commands.Unknown)
+            {
+                Player.AddMove();
+            }
+
             switch (command)
             {
                 case Commands.Quit:
@@ -117,6 +123,14 @@ namespace Zork.Common
                     }
                     break;
 
+                case Commands.Reward:
+                    Player.AddScore();
+                    break;
+
+                case Commands.Score:
+                    Output.WriteLine($"Your score would be {Player.Score}, in {Player.Moves} moves.");
+                    break;
+
                 default:
                     Output.WriteLine("Unknown command.");
                     break;
@@ -126,7 +140,7 @@ namespace Zork.Common
             {
                 Look();
             }
-
+                        
             Output.WriteLine($"\n{Player.CurrentRoom}");
         }
         

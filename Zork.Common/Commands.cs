@@ -20,6 +20,9 @@
         Drop,
         Inventory,
         I = Inventory,
+        Reward,
+        R = Reward,
+        Score,
         Unknown
     }
 }
