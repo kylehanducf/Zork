@@ -71,26 +71,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ky595202\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\kyleh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ky595202\\Documents\\GitHub\\Zork\\Zork.Cli\\Zork.Cli.csproj",
+      "projectUniqueName": "H:\\School 2022\\Design Tools & Plugins\\Zork\\Zork\\Zork.Cli\\Zork.Cli.csproj",
       "projectName": "Zork.Cli",
-      "projectPath": "C:\\Users\\ky595202\\Documents\\GitHub\\Zork\\Zork.Cli\\Zork.Cli.csproj",
-      "packagesPath": "C:\\Users\\ky595202\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ky595202\\Documents\\GitHub\\Zork\\Zork.Cli\\obj\\",
+      "projectPath": "H:\\School 2022\\Design Tools & Plugins\\Zork\\Zork\\Zork.Cli\\Zork.Cli.csproj",
+      "packagesPath": "C:\\Users\\kyleh\\.nuget\\packages\\",
+      "outputPath": "H:\\School 2022\\Design Tools & Plugins\\Zork\\Zork\\Zork.Cli\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ky595202\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\kyleh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -98,15 +91,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\ky595202\\Documents\\GitHub\\Zork\\Zork.Common\\Zork.Common.csproj": {
-              "projectPath": "C:\\Users\\ky595202\\Documents\\GitHub\\Zork\\Zork.Common\\Zork.Common.csproj"
+            "H:\\School 2022\\Design Tools & Plugins\\Zork\\Zork\\Zork.Common\\Zork.Common.csproj": {
+              "projectPath": "H:\\School 2022\\Design Tools & Plugins\\Zork\\Zork\\Zork.Common\\Zork.Common.csproj"
             }
           }
         }
@@ -139,20 +131,8 @@
         "warn": true,
         "downloadDependencies": [
           {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.10, 3.1.10]"
-          },
-          {
             "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[3.1.28, 3.1.28]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[3.1.0, 3.1.0]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[3.1.0, 3.1.0]"
+            "version": "[3.1.29, 3.1.29]"
           }
         ],
         "frameworkReferences": {
@@ -160,7 +140,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

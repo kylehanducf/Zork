@@ -1,6 +1,13 @@
 {
   "StartingLocation": "West of House",
   "World": {
+    "Enemies": [
+      {
+        "Name": "Troll",
+        "LookDescription": "A large troll is standing there drooling. He is looking at you. He does not look friendly.",
+        "HitPoints": 3
+      }
+    ],
     "Items": [
       {
         "Name": "Mat",
@@ -81,7 +88,10 @@
         "NeighborNames": {
           "North": "South of House",
           "East": "Clearing"
-        }
+        },
+        "EnemyNames": [
+          "Troll"
+        ]
       },
       {
         "Name": "Clearing",

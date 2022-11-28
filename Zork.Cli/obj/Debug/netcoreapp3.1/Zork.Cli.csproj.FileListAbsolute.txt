@@ -17,3 +17,22 @@ C:\Users\ky595202\Documents\GitHub\Zork\Zork.Cli\obj\Debug\netcoreapp3.1\Zork.Cl
 C:\Users\ky595202\Documents\GitHub\Zork\Zork.Cli\obj\Debug\netcoreapp3.1\Zork.Cli.dll
 C:\Users\ky595202\Documents\GitHub\Zork\Zork.Cli\obj\Debug\netcoreapp3.1\Zork.Cli.pdb
 C:\Users\ky595202\Documents\GitHub\Zork\Zork.Cli\obj\Debug\netcoreapp3.1\Zork.Cli.genruntimeconfig.cache
+H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Cli\bin\Debug\netcoreapp3.1\Content\Game.json
+H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Cli\bin\Debug\netcoreapp3.1\Zork.Cli.exe
+H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Cli\bin\Debug\netcoreapp3.1\Zork.Cli.deps.json
+H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Cli\bin\Debug\netcoreapp3.1\Zork.Cli.runtimeconfig.json
+H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Cli\bin\Debug\netcoreapp3.1\Zork.Cli.runtimeconfig.dev.json
+H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Cli\bin\Debug\netcoreapp3.1\Zork.Cli.dll
+H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Cli\bin\Debug\netcoreapp3.1\Zork.Cli.pdb
+H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Cli\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Cli\bin\Debug\netcoreapp3.1\Zork.Common.dll
+H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Cli\bin\Debug\netcoreapp3.1\Zork.Common.pdb
+H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Cli\obj\Debug\netcoreapp3.1\Zork.Cli.csproj.AssemblyReference.cache
+H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Cli\obj\Debug\netcoreapp3.1\Zork.Cli.GeneratedMSBuildEditorConfig.editorconfig
+H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Cli\obj\Debug\netcoreapp3.1\Zork.Cli.AssemblyInfoInputs.cache
+H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Cli\obj\Debug\netcoreapp3.1\Zork.Cli.AssemblyInfo.cs
+H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Cli\obj\Debug\netcoreapp3.1\Zork.Cli.csproj.CoreCompileInputs.cache
+H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Cli\obj\Debug\netcoreapp3.1\Zork.Cli.csproj.CopyComplete
+H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Cli\obj\Debug\netcoreapp3.1\Zork.Cli.dll
+H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Cli\obj\Debug\netcoreapp3.1\Zork.Cli.pdb
+H:\School 2022\Design Tools & Plugins\Zork\Zork\Zork.Cli\obj\Debug\netcoreapp3.1\Zork.Cli.genruntimeconfig.cache

@@ -1,14 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "IUvdwV6ZZwusG0tfc01fAyn7G7f5Ctd1TYNHuRBHNb2fqoF50zDIN6UkT4Nu2GlNivQAodAiYej+9kdXEeJqcg==",
+  "dgSpecHash": "3I+kvFZTNcl7entk7uIvC0gOMHF/DpsURusE1n2ARRDFy1E1hpd0Kz/bkxAo1K9rOCE7YJ7A2jliooF02W4Gag==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ky595202\\Documents\\GitHub\\Zork\\Zork.Cli\\Zork.Cli.csproj",
+  "projectFilePath": "H:\\School 2022\\Design Tools & Plugins\\Zork\\Zork\\Zork.Cli\\Zork.Cli.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ky595202\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
-    "C:\\Users\\ky595202\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.28\\microsoft.netcore.app.host.win-x64.3.1.28.nupkg.sha512",
-    "C:\\Users\\ky595202\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
-    "C:\\Users\\ky595202\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\ky595202\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+    "C:\\Users\\kyleh\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\kyleh\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.29\\microsoft.netcore.app.host.win-x64.3.1.29.nupkg.sha512"
   ],
   "logs": []
 }
