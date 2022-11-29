@@ -110,14 +110,6 @@ namespace Zork.Common
             }
         }
 
-        public void RemoveEnemyFromEnemies(Enemy enemyToRemove)
-        {
-            if(_enemies.Remove(enemyToRemove) == false)
-            {
-                throw new Exception("Could not remove enemy from enemies.");
-            }
-        }
-
         public override string ToString() => Name;
 
         private readonly List<Item> _inventory;

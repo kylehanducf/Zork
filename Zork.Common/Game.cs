@@ -45,6 +45,9 @@ namespace Zork.Common
 
             string verb;
             string subject = null;
+            string preposition = null;
+            string target = null;
+
             if (commandTokens.Length == 0)
             {
                 return;
@@ -53,10 +56,21 @@ namespace Zork.Common
             {
                 verb = commandTokens[0];
             }
+            else if (commandTokens.Length == 2)
+            {
+                verb = commandTokens[0];
+                target = commandTokens[1];
+            }
+            else if (commandTokens.Length == 3)
+            {
+                return;
+            }
             else
             {
                 verb = commandTokens[0];
-                subject = commandTokens[1];
+                target = commandTokens[1];
+                preposition = commandTokens[2];
+                subject = commandTokens[3];
             }
 
             Room previousRoom = Player.CurrentRoom;
@@ -87,29 +101,29 @@ namespace Zork.Common
                     break;
 
                 case Commands.Take:
-                    if (string.IsNullOrEmpty(subject))
+                    if (string.IsNullOrEmpty(target))
                     {
-                        Output.WriteLine("This command requires a subject.");
+                        Output.WriteLine("This command requires a target.");
                     }
                     else
                     {
-                        Take(subject);
+                        Take(target);
                     }
                     break;
 
                 case Commands.Drop:
-                    if (string.IsNullOrEmpty(subject))
+                    if (string.IsNullOrEmpty(target))
                     {
-                        Output.WriteLine("This command requires a subject.");
+                        Output.WriteLine("This command requires a target.");
                     }
                     else
                     {
-                        Drop(subject);
+                        Drop(target);
                     }
                     break;
 
                 case Commands.Inventory:
-                    if (Player.Inventory.Count() == 0)
+                    if (Player.Inventory.Count() == 1)
                     {
                         Console.WriteLine("You are empty handed.");
                     }
@@ -122,6 +136,37 @@ namespace Zork.Common
                         }
                     }
                     break;
+
+                case Commands.Attack:
+                    if (string.IsNullOrEmpty(target))
+                    {
+                        Output.WriteLine("This command requires a target.");
+                    }
+                    if (string.IsNullOrEmpty(preposition))
+                    {
+                        Output.WriteLine("This command requires a preposition.");
+                    }
+                    if (string.IsNullOrEmpty(subject))
+                    {
+                        Output.WriteLine("This command requires a subject.");
+                    }
+                    else
+                    {
+                        Attack(target, subject);
+                    }
+                    //DONT FORGET TO CLEAN UP THE WAY THIS OUTPUTS TO SCREEN!!!!!!!!!!!!!!!
+                    return;
+
+                case Commands.Drink:
+                    if (string.IsNullOrEmpty(target))
+                    {
+                        Output.WriteLine("This command requires a target.");
+                    }
+                    else
+                    {
+                        Consume(target);
+                    }
+                    return;
 
                 case Commands.Reward:
                     Player.AddScore();
@@ -175,15 +220,53 @@ namespace Zork.Common
         private void Drop(string itemName)
         {
             Item itemToDrop = Player.Inventory.FirstOrDefault(item => string.Compare(item.Name, itemName, ignoreCase: true) == 0);
-            if (itemToDrop == null)
+            if (itemToDrop == null || itemToDrop.Droppable == false)
             {
-                Console.WriteLine("You can't see any such thing.");                
+                Console.WriteLine("Huh?");                
             }
             else
             {
                 Player.CurrentRoom.AddItemToInventory(itemToDrop);
                 Player.RemoveItemFromInventory(itemToDrop);
                 Console.WriteLine("Dropped.");
+            }
+        }
+
+        private void Attack(string enemyName, string weaponName)
+        {
+            Enemy enemyToAttack = Player.CurrentRoom.Enemies.FirstOrDefault(enemy => string.Compare(enemy.Name, enemyName, ignoreCase: true) == 0);
+            Item weaponToAttack = Player.Inventory.FirstOrDefault(item => string.Compare(item.Name, weaponName, ignoreCase: true) == 0);
+            if (enemyToAttack == null || weaponToAttack == null)
+            {
+                Console.WriteLine("Do what now?");
+            }
+            else if (weaponToAttack.Tag != "Weapon")
+            {
+                Console.WriteLine("That is probably not a good idea.");
+            }
+            else
+            {
+                if (enemyToAttack.HitPoints > 0)
+                {
+                    Player.DealDamage(weaponToAttack, enemyToAttack);
+                }
+                else
+                {
+                    Console.WriteLine("It's already dead...");
+                }
+            }
+        }
+
+        private void Consume(string itemName)
+        {
+            Item itemToConsume = Player.Inventory.FirstOrDefault(item => string.Compare(item.Name, itemName, ignoreCase: true) == 0);
+            if (itemToConsume == null || itemToConsume.Consumable == false)
+            {
+                Console.WriteLine("That would be unwise.");
+            }
+            else
+            {
+                Player.Consume(itemToConsume);
             }
         }
 

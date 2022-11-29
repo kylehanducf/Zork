@@ -40,6 +40,13 @@ namespace Zork.Common
             }
 
             _inventory = new List<Item>();
+            foreach (Item item in world.Items)
+            {
+                if (item.Name == "Fists")
+                {
+                    _inventory.Add(item);
+                }
+            }
         }
 
         public bool Move(Directions direction)
@@ -81,6 +88,38 @@ namespace Zork.Common
         {
             Score++;
             ScoreChanged?.Invoke(this, Score);
+        }
+
+        public void DealDamage(Item attackingItem, Enemy attackedEnemy)
+        {
+            attackedEnemy.HitPoints -= attackingItem.DamagePoints;
+            if(attackedEnemy.HitPoints <= 0)
+            {
+                Console.WriteLine(attackedEnemy.DeathDescription);
+                attackedEnemy.LookDescription = attackedEnemy.DeathDescription;
+                Console.WriteLine(attackingItem.CompletedMessage);
+            }
+            else
+            {
+                Console.WriteLine(attackingItem.UsedMessage);
+            }
+        }
+
+        public void Consume(Item consumableItem)
+        {
+            switch (consumableItem.Status)
+            {
+                case "Buff Strength":
+                    foreach (Item item in _inventory)
+                    {
+                        if(item.Name == "Fists")
+                        {
+                            item.DamagePoints += 10;
+                            Console.WriteLine(consumableItem.CompletedMessage);
+                        }
+                    }
+                    return;
+            }
         }
 
         private readonly World _world;

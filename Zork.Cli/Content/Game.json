@@ -5,6 +5,7 @@
       {
         "Name": "Troll",
         "LookDescription": "A large troll is standing there drooling. He is looking at you. He does not look friendly.",
+        "DeathDescription": "The large troll has been slain.",
         "HitPoints": 3
       }
     ],
@@ -12,17 +13,52 @@
       {
         "Name": "Mat",
         "LookDescription": "A rubber mat saying 'Welcome to Zork!' lies here.",
-        "InventoryDescription": "A welcome mat."
+        "InventoryDescription": "A welcome mat.",
+        "Droppable": true
       },
       {
         "Name": "Mailbox",
         "LookDescription": "There is a small mailbox here.",
-        "InventoryDescription": "A small mailbox."
+        "InventoryDescription": "A small mailbox.",
+        "Tag": "Weapon",
+        "UsedMessage": "The mailbox slammed hard against its foe!",
+        "CompletedMessage": "That's one way to deliver bad news!",
+        "DamagePoints": 2,
+        "Droppable": true
       },
       {
         "Name": "Leaves",
         "LookDescription": "There is a pile of leaves here.",
-        "InventoryDescription": "A pile of leaves."
+        "InventoryDescription": "A pile of leaves.",
+        "Droppable": true
+      },
+      {
+        "Name": "Sword",
+        "LookDescription": "A greatsword lays partially exposed from the crawlspace of the house. It shines in the light showing its very sharp edges.",
+        "InventoryDescription": "A greatsword.",
+        "Tag": "Weapon",
+        "UsedMessage": "The sword struck with a great slash!",
+        "CompletedMessage": "The sword conquers all!",
+        "DamagePoints": 3,
+        "Droppable": true
+      },
+      {
+        "Name": "Fists",
+        "InventoryDescription": "Your dirty hands.",
+        "Tag": "Weapon",
+        "UsedMessage": "Your fists bounce off like marshmallows.",
+        "CompletedMessage": "Such power has never been seen before!",
+        "DamagePoints": 0,
+        "Droppable": false
+      },
+      {
+        "Name": "Potion",
+        "LookDescription": "A potion with a glimmering looks like it can be reached through the window.",
+        "InventoryDescription": "A magical potion.",
+        "CompletedMessage": "You drink your strongest potion! Your hands feel like smashing things as you smash the potion into oblivion!",
+        "Droppable": true,
+        "Consumable": true,
+        "Status":  "Buff Strength"
       }
     ],
     "Rooms": [
@@ -46,7 +82,10 @@
           "North": "Forest 2",
           "East": "Behind House",
           "West": "West of House"
-        }
+        },
+        "InventoryNames": [
+          "Sword"
+        ]
       },
       {
         "Name": "South of House",
@@ -63,7 +102,10 @@
           "North": "North of House",
           "East": "Clearing",
           "South": "South of House"
-        }
+        },
+        "InventoryNames": [
+          "Potion"
+        ]
       },
       {
         "Name": "Forest 1",

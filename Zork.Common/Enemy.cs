@@ -4,15 +4,18 @@
     {
         public string Name { get; }
 
-        public string LookDescription { get; }
+        public string LookDescription { get; set; }
 
-        public int HitPoints { get; }
+        public string DeathDescription { get; }
 
-        public Enemy(string name, string lookDescription, string enemyLocation, int hitPoints)
+        public int HitPoints { get; set; }
+
+        public Enemy(string name, string lookDescription, string enemyLocation, int hitPoints, string deathDescription)
         {
             Name = name;
             LookDescription = lookDescription;
             HitPoints = hitPoints;
+            DeathDescription = deathDescription;
         }
 
         public override string ToString() => Name;

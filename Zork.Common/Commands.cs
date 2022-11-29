@@ -24,6 +24,7 @@
         R = Reward,
         Score,
         Attack,
+        Drink,
         Unknown
     }
 }
