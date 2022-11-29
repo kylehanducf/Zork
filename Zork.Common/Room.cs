@@ -79,6 +79,7 @@ namespace Zork.Common
             foreach (var inventoryName in InventoryNames)
             {
                 _inventory.Add(world.ItemsByName[inventoryName]);
+                
             }
 
             InventoryNames = null;

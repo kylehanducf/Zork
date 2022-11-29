@@ -25,6 +25,7 @@
         Score,
         Attack,
         Drink,
+        Open,
         Unknown
     }
 }

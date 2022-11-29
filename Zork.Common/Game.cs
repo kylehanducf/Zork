@@ -168,6 +168,17 @@ namespace Zork.Common
                     }
                     return;
 
+                case Commands.Open:
+                    if (string.IsNullOrEmpty(target))
+                    {
+                        Output.WriteLine("This command requires a target.");
+                    }
+                    else
+                    {
+                        Open(target);
+                    }
+                    return;
+
                 case Commands.Reward:
                     Player.AddScore();
                     break;
@@ -205,9 +216,9 @@ namespace Zork.Common
         private void Take(string itemName)
         {
             Item itemToTake = Player.CurrentRoom.Inventory.FirstOrDefault(item => string.Compare(item.Name, itemName, ignoreCase: true) == 0);
-            if (itemToTake == null)
+            if (itemToTake == null || itemToTake.Name == "Chest")
             {
-                Console.WriteLine("You can't see any such thing.");                
+                Console.WriteLine("Can't do that.");                
             }
             else
             {
@@ -267,6 +278,18 @@ namespace Zork.Common
             else
             {
                 Player.Consume(itemToConsume);
+            }
+        }
+        private void Open(string itemName)
+        {
+            Item itemToOpen = Player.CurrentRoom.Inventory.FirstOrDefault(item => string.Compare(item.Name, itemName, ignoreCase: true) == 0);
+            if (itemToOpen == null || itemToOpen.Inventory == null)
+            {
+                Console.WriteLine("Can't do that.");
+            }
+            else
+            {
+                Player.Open(itemToOpen);
             }
         }
 

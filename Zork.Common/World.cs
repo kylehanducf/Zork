@@ -55,6 +55,10 @@ namespace Zork.Common
                 room.UpdateInventory(this);
                 room.UpdateEnemies(this);
             }
+            foreach (Item item in Items)
+            {
+                item.UpdateInventory(this);
+            }
         }
 
         private readonly Dictionary<string, Room> _roomsByName;

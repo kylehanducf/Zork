@@ -53,12 +53,21 @@
       },
       {
         "Name": "Potion",
-        "LookDescription": "A potion with a glimmering looks like it can be reached through the window.",
+        "LookDescription": "A potion with a glimmering liquid sits there looking very 'thirst quenching'.",
         "InventoryDescription": "A magical potion.",
         "CompletedMessage": "You drink your strongest potion! Your hands feel like smashing things as you smash the potion into oblivion!",
         "Droppable": true,
         "Consumable": true,
-        "Status":  "Buff Strength"
+        "Status": "Buff Strength"
+      },
+      {
+        "Name": "Chest",
+        "LookDescription": "A small chest sits against the house.",
+        "Droppable": true,
+        "InventoryNames": [
+          "Potion"
+        ],
+        "Open": false
       }
     ],
     "Rooms": [
@@ -93,7 +102,10 @@
         "NeighborNames": {
           "East": "Behind House",
           "West": "West of House"
-        }
+        },
+        "InventoryNames": [
+          "Chest"
+        ]
       },
       {
         "Name": "Behind House",
@@ -139,7 +151,7 @@
         "Name": "Clearing",
         "Description": "You are in a clearing, with a forest surrounding you on the west and south.",
         "NeighborNames": {
-          "West": "Forest 2",
+          "West": "Behind House",
           "South": "Forest 3"
         },
         "IventoryNames": [

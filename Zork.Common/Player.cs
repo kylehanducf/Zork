@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Zork.Common
 {
@@ -97,11 +98,11 @@ namespace Zork.Common
             {
                 Console.WriteLine(attackedEnemy.DeathDescription);
                 attackedEnemy.LookDescription = attackedEnemy.DeathDescription;
-                Console.WriteLine(attackingItem.CompletedMessage);
+                Console.WriteLine($"{attackingItem.CompletedMessage} \n");
             }
             else
             {
-                Console.WriteLine(attackingItem.UsedMessage);
+                Console.WriteLine($"{attackingItem.UsedMessage} \n");
             }
         }
 
@@ -119,6 +120,26 @@ namespace Zork.Common
                         }
                     }
                     return;
+            }
+        }
+        public void Open(Item itemToOpen)
+        {
+            if(itemToOpen.Open == false)
+            {
+                Console.WriteLine("You empty its contents.");
+
+                foreach (Item item in itemToOpen.Inventory)
+                {
+                    _currentRoom.AddItemToInventory(item);
+                    Console.WriteLine(item.LookDescription);
+                }
+
+                Console.WriteLine("");
+                itemToOpen.Open = true;
+            }
+            else
+            {
+                Console.WriteLine("It's already open.\n");
             }
         }
 
